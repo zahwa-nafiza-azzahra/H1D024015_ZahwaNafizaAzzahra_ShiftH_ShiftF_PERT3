@@ -28,6 +28,7 @@ profit['tinggi'] = fuzz.trapmf(profit.universe, [3000000, 3500000, 4000000, 4000
 stok_makanan['sedang'] = fuzz.trapmf(stok_makanan.universe, [0, 0, 400, 600])
 stok_makanan['banyak'] = fuzz.trapmf(stok_makanan.universe, [500, 800, 1000, 1000])
 
+# 6 aturan fuzzy sesuai PDF
 rule1 = ctrl.Rule(barang_terjual['tinggi'] & permintaan['tinggi'] & harga_item['murah'] & profit['tinggi'], stok_makanan['banyak'])
 rule2 = ctrl.Rule(barang_terjual['tinggi'] & permintaan['tinggi'] & harga_item['murah'] & profit['sedang'], stok_makanan['sedang'])
 rule3 = ctrl.Rule(barang_terjual['tinggi'] & permintaan['sedang'] & harga_item['murah'] & profit['sedang'], stok_makanan['sedang'])
